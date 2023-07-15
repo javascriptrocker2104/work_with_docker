@@ -1,0 +1,9 @@
+docker build -t forscriptpy:latest .- создание образа.
+docker run --rm -d --name sql_script –p 5432:5432 b9bb05887d19 - запуск контейнера на основе образа.
+docker exec -it sql_script bash - команда, чтобы зайти внутрь контейнера и взаимодействовать с ним.
+psql -U anne -d database - запуск интерфейса psql.
+cd /docker-entrypoint-initdb.d - команда, с помощью которой заходим в папку, где находится скрипт.
+ls - просмотр содержимого.
+сat init.sql - запись в файл (изменение файла) 
+docker run --rm --name sql_script -p 5432:5432 -v /data:/var/lib/postgresql/data -d b9bb05887d19
+0f8bf63d8ffba0546ee195c0902ffaaf4a817274163860a4364ce417178cb474 - запуск контейнера с томом для хранения и управления данными.
